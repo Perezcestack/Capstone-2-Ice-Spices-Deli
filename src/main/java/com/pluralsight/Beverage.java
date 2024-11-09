@@ -9,11 +9,14 @@ public class Beverage implements Orderable{
         this.size = size;
     }
 
-    public Beverage(String size) {
+
+    public Beverage(String size, String name) {
         this.size = size;
+        this.name = name;
     }
 
     private String size;
+    private String name;
 
 
     @Override
@@ -26,9 +29,5 @@ public class Beverage implements Orderable{
             return 3.00;
         }
         return 0;
-    }
-
-    public Beverage newBev(String size){
-        return new Beverage(size);
     }
 }
