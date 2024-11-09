@@ -25,7 +25,9 @@ public class Order  {
         System.out.println("What toppings do you want?  (included at no extra cost, even for extra)" +
                 "\nWe have " + RegularTopping.getToppings() + "\nThe premium toppings (cost moneys and extra costs money)" +
                 " are Cheeses like American,Provolone,Cheddar,Swiss and Meats like Steak, Ham, Salami, Roast beef," +
-                " Chicken, and Bacon." + "\nPlease Separate each topping with a |");
+                " Chicken, and Bacon." + "\nPlease Separate each topping with a | \"yo mama\"");
+
+
 
         //new Sandwich(sizeChoice,)
     }
