@@ -63,6 +63,11 @@ public class Sandwich implements Orderable{
     private String breadType;
     private double price;
     private List<String> toppingList;
+
+    public List<String> getExtraPremium() {
+        return extraPremium;
+    }
+
     private List<String> extraPremium;
 
     public List<String> getPreemToppingsList() {
@@ -96,7 +101,7 @@ public class Sandwich implements Orderable{
 
     @Override
     public double getprice() {
-       return 0;
+       return SandwichPriceCalc.calculateSandwich(this);
 
     }
 }

@@ -3,8 +3,8 @@ package com.pluralsight;
 import java.util.List;
 
 public class RegularTopping extends Topping {
-    public static List<String> toppings = List.of("lettuce","Peppers","Onions","Tomatoes","Jalapenos","Pickles"
-        ,"Guacamole","Mushrooms","Mayo","Mustard","Ketchup","Ranch","Thousand Islands","Vinaigrette","Au Jus","Sauce");
+    public static List<String> toppings = List.of("lettuce","peppers","onions","tomatoes","jalapenos","pickles"
+        ,"guacamole","mushrooms","mayo","mustard","ketchup","ranch","thousand islands","vinaigrette","au jus","sauce");
 //CHANGE EVERYTHING TO LOWERCASE
 
     public static List<String> getToppings() {
