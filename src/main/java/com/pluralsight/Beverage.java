@@ -18,6 +18,11 @@ public class Beverage implements Orderable{
     private String size;
     private String name;
 
+    @Override
+    public String toString() {
+        return "You got a " + name +
+                " size " + size;
+    }
 
     @Override
     public double getprice() {

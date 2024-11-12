@@ -1,6 +1,10 @@
 package com.pluralsight;
 
+import java.util.List;
+
 public class Cheese extends Topping {
+    public static List<String> premiumCheese = List.of("American","Provolone","Cheddar","Swiss");
+    //CHANGE EVERYTHING TO LOWERCASE
     private final double PRICEOFSMALL = 0.75;
     private final double PRICEOFMEDIUM = 1.50;
     private final double PRICEOFLARGE = 2.25;

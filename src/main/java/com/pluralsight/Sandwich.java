@@ -32,12 +32,12 @@ public class Sandwich implements Orderable{
         this.price = price;
     }
 
-    public List<Topping> getToppingsList() {
+    public List<String> getToppingsList() {
 
         return toppingList;
     }
 
-    public void setToppingsList(List<Topping> toppingList) {
+    public void setToppingsList(List<String> toppingList) {
         this.toppingList = toppingList;
     }
 
@@ -49,18 +49,27 @@ public class Sandwich implements Orderable{
         isToasted = toasted;
     }
 
-    public Sandwich(String size, String breadType, double price, List<Topping> toppingList, boolean isToasted) {
+    public Sandwich(String size, String breadType, List<String> toppingList,List<String> preemToppingsList,List<String> extraPremium,boolean isToasted) {
         this.size = size;
         this.breadType = breadType;
         this.price = price;
         this.toppingList = toppingList;
+        this.preemToppingsList = preemToppingsList;
+        this.extraPremium = extraPremium;
         this.isToasted = isToasted;
     }
 
     private String size;
     private String breadType;
     private double price;
-    private List<Topping> toppingList;
+    private List<String> toppingList;
+    private List<String> extraPremium;
+
+    public List<String> getPreemToppingsList() {
+        return preemToppingsList;
+    }
+
+    private List<String> preemToppingsList;
     private boolean isToasted;
 
     public double getBreadPrice() {
@@ -77,7 +86,17 @@ public class Sandwich implements Orderable{
     }
 
     @Override
+    public String toString() {
+        return "Sandwich{" +
+                "Your size sandwich is " + size + " inches" +
+                " with a bread type " + breadType +
+                " your toppings are " + toppingList + ", " + preemToppingsList +
+                " toasted? = " + isToasted;
+    }
+
+    @Override
     public double getprice() {
-        return 0;
+       return 0;
+
     }
 }

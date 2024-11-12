@@ -9,7 +9,12 @@ public class Chips implements Orderable{
 
     private String name;
 
-   @Override
+    @Override
+    public String toString() {
+        return "Chips " + name + '\'';
+    }
+
+    @Override
    public double getprice() {
     return CHIPS;
    }
