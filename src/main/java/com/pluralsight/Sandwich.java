@@ -95,7 +95,7 @@ public class Sandwich implements Orderable{
         return "Sandwich{" +
                 "Your size sandwich is " + size + " inches" +
                 " with a bread type " + breadType +
-                " your toppings are " + toppingList + ", " + preemToppingsList +
+                " your toppings are " + toppingList + ", " + preemToppingsList + extraPremium +
                 " toasted? = " + isToasted;
     }
 

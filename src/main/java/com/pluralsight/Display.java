@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Display {
@@ -31,6 +32,7 @@ public class Display {
                 order.newChipsForOrder();
                 break;
             case "4":
+                order.checkOut();
                 //use Sandwichgetprice on checkout for everything in total order
                 //double sum = 0 then
                 // for(Orderable order : totalOrder){

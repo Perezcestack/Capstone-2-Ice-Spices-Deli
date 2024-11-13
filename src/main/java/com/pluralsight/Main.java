@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -7,10 +8,5 @@ public class Main {
 
     public static void main(String[] args) {
         Display.homeScreen();
-        // call homescreen method
-        //should I do this here? > String choice = input.nextLine
-        //should I do this here? >if choice.equals 1 call OrderScreen method
-
-
     }
 }

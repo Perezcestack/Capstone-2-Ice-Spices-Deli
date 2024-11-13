@@ -14,6 +14,7 @@ public class SandwichPriceCalc {
                 } else if (Cheese.premiumCheese.contains(topping)) {
                     sum += 0.75;
                 }
+
             }
             for (String topping : sandwich.getExtraPremium()) {
                 if (Meat.premiumMeats.contains(topping)) {

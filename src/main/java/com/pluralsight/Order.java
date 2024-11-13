@@ -1,5 +1,11 @@
 package com.pluralsight;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import static com.pluralsight.Display.*;
@@ -37,9 +43,9 @@ public class Order {
             if (toastChoice.equalsIgnoreCase("Yes")) {
                 toasted = true;
                 break;
-            } else if(toastChoice.equalsIgnoreCase("no")){
+            } else if (toastChoice.equalsIgnoreCase("no")) {
                 toasted = false;
-            }else {
+            } else {
                 System.out.println("Sorry that input was invalid");
             }
         }
@@ -94,6 +100,7 @@ public class Order {
                         for (String e : exToppingsAnswer) {
                             e = e.trim();
                             extraPremium.add(e);
+
                         }
                     }
                     counterCheese++;
@@ -133,7 +140,7 @@ public class Order {
     }
 
 
-    public void newBevForOrder() {
+    public void newBevForOrder(){
         System.out.println("What drink do you want?");
         String drinkName = input.nextLine();
         System.out.println("What size drink do you want?(Small Medium Large)");
@@ -162,4 +169,42 @@ public class Order {
             orderScreen();
         }
     }
+
+    public void checkOut() {
+        System.out.println("Alright this is your order!");
+        System.out.println(totalOrder);
+
+
+        double sum = 0;
+        for (Orderable order : totalOrder) {
+            sum += order.getprice();
+        }
+        System.out.println("Your total price will be " + sum);
+        receiptWriter();
+        //send total order to receipts folder
+        //receipts/ is the location needed to be sent
+        //use Sandwichgetprice on checkout for everything in total order
+        //double sum = 0 then
+        // for(Orderable order : totalOrder){
+        // sum += order.getprice;
+        //} 7 + 2 + 1 + 1.5 +1.5 + 2
+    }
+
+    public void receiptWriter() {
+        LocalDate localDate = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String name = "Receipts\\receipt # " + orderNum + localDate.format(dateTimeFormatter) + ".txt";
+
+        try {
+            FileWriter writer = new FileWriter(name);
+            for (Orderable order : totalOrder) {
+                writer.write(order.toString() + order.getprice() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+
+
