@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.List;
 
-public class Sandwich implements Orderable{
+public class Sandwich implements Orderable {
     public String getSize() {
         return size;
     }
@@ -49,7 +49,7 @@ public class Sandwich implements Orderable{
         isToasted = toasted;
     }
 
-    public Sandwich(String size, String breadType, List<String> toppingList,List<String> preemToppingsList,List<String> extraPremium,boolean isToasted) {
+    public Sandwich(String size, String breadType, List<String> toppingList, List<String> preemToppingsList, List<String> extraPremium, boolean isToasted) {
         this.size = size;
         this.breadType = breadType;
         this.price = price;
@@ -93,15 +93,15 @@ public class Sandwich implements Orderable{
     @Override
     public String toString() {
         return "Sandwich{" +
-                "Your size sandwich is " + size + " inches" +
-                " with a bread type " + breadType +
-                " your toppings are " + toppingList + ", " + preemToppingsList + extraPremium +
-                " toasted? = " + isToasted;
+                "Your size sandwich is " + this.size + " inches" +
+                " with a bread type " + this.breadType +
+                " your toppings are " + this.toppingList + ", " + this.preemToppingsList + this.extraPremium +
+                " toasted? = " + this.isToasted;
     }
 
     @Override
     public double getprice() {
-       return SandwichPriceCalc.calculateSandwich(this);
+        return SandwichPriceCalc.calculateSandwich(this);
 
     }
 }

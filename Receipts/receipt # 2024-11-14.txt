@@ -1,0 +1,2 @@
+You got a Coke size small 2.0
+Sandwich{Your size sandwich is 4 inches with a bread type white your toppings are [lettuce], [bacon, cheddar][] toasted? = true 7.25

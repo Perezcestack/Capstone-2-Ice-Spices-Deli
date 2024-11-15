@@ -1,0 +1,2 @@
+Sandwich{Your size sandwich is 4 inches with a bread type rye your toppings are [onions], [bacon, swiss][] toasted? = false 7.25
+Sandwich{Your size sandwich is 12 inches with a bread type White your toppings are [onions, peppers], [bacon, swiss, steak, swiss][bacon, american] toasted? = true 21.4

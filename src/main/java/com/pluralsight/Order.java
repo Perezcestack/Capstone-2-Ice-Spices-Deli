@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -15,17 +16,19 @@ public class Order {
     public List<String> regToppingListChoices = new ArrayList<>();
     public List<String> premiumToppingsChoices = new ArrayList<>();
     public List<String> extraPremium = new ArrayList<>();
+//    public List<String> uniqueRegToppingListChoices = new ArrayList<>();
+//    public List<String> uniquePremiumToppingsChoices = new ArrayList<>();
+//    public List<String> uniqueExtraPremium = new ArrayList<>();
     boolean toasted;
     String sandoName;
     String breadChoice;
     String sizeChoice;
     String toastChoice;
     Map<String, Sandwich> orderMap = new HashMap<>();
-
     //    public List<Sandwich> getSandoList() {
 //        return sandoList;
-
     //screen for making a new sandwich
+
     public void newSandoOrder() {
         while (true) {
             System.out.println("What type of bread do you want? White,Wheat,Rye or a Wrap");
@@ -45,6 +48,7 @@ public class Order {
                 break;
             } else if (toastChoice.equalsIgnoreCase("no")) {
                 toasted = false;
+                break;
             } else {
                 System.out.println("Sorry that input was invalid");
             }
@@ -126,11 +130,15 @@ public class Order {
 //        System.out.println(regToppingListChoices);more debugging
         System.out.println("Whats the name for this sandwich?");
         sandoName = input.nextLine();
-        totalOrder.add(new Sandwich(sizeChoice, breadChoice, regToppingListChoices, premiumToppingsChoices, extraPremium, toasted));
+        totalOrder.add(new Sandwich(sizeChoice, breadChoice, new ArrayList<>(regToppingListChoices),new ArrayList<>(premiumToppingsChoices), new ArrayList<>(extraPremium), toasted));
+        regToppingListChoices.clear();
+        premiumToppingsChoices.clear();
+        extraPremium.clear();
+
+        //Problem is both add to same list while ordering i need to seperate them
 //        for(Orderable order : totalOrder){
 //            if(order instanceof Sandwich s){
 //                System.out.println(s);
-//            }
 //        } this is if i want to print out only sandwiches in my total order
         orderScreen();
 //        System.out.println(sandoList);
@@ -139,8 +147,7 @@ public class Order {
 //        System.out.println(orderMap.get(sandoName));
     }
 
-
-    public void newBevForOrder(){
+    public void newBevForOrder() {
         System.out.println("What drink do you want?");
         String drinkName = input.nextLine();
         System.out.println("What size drink do you want?(Small Medium Large)");
@@ -173,14 +180,12 @@ public class Order {
     public void checkOut() {
         System.out.println("Alright this is your order!");
         System.out.println(totalOrder);
-
-
         double sum = 0;
         for (Orderable order : totalOrder) {
             sum += order.getprice();
         }
-        System.out.println("Your total price will be " + sum);
         receiptWriter();
+        System.out.println("Your total price will be " + sum);
         //send total order to receipts folder
         //receipts/ is the location needed to be sent
         //use Sandwichgetprice on checkout for everything in total order
@@ -191,14 +196,14 @@ public class Order {
     }
 
     public void receiptWriter() {
-        LocalDate localDate = LocalDate.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String name = "Receipts\\receipt # " + orderNum + localDate.format(dateTimeFormatter) + ".txt";
+        LocalDateTime localDate = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh-mm-ss");
+        String name = "Receipts\\receipt # " + localDate.format(dateTimeFormatter) + ".txt";
 
         try {
             FileWriter writer = new FileWriter(name);
             for (Orderable order : totalOrder) {
-                writer.write(order.toString() + order.getprice() + "\n");
+                writer.write(order.toString() + " " + order.getprice() + "\n");
             }
             writer.close();
         } catch (IOException e) {

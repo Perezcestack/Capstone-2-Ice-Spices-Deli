@@ -1,8 +1,0 @@
-Order is 1
-Sandwich{Your size sandwich is 8 inches with a bread type Rye your toppings are [lettuce, peppers, lettuce, peppers], [ham, cheddar, ham, cheddar][Bacon, American] toasted? = true14.0
-Order is 1
-You got a Coke size medium2.5
-Order is 1
-Chips Lays'1.5
-Order is 1
-Sandwich{Your size sandwich is 4 inches with a bread type White your toppings are [lettuce, peppers, lettuce, peppers], [ham, cheddar, ham, cheddar][Bacon, American] toasted? = true9.0

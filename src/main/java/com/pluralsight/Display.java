@@ -18,8 +18,9 @@ public class Display {
     }
 
     public static void orderScreen() {
+        System.out.println("------------------------------------");
         System.out.println("(1) Add Sandwich\n(2) Add Drink\n(3) Add Chips\n(4) Checkout\n(0) Cancel Order and go home!");
-        String sandoChoice = input.nextLine();
+        String sandoChoice = input.nextLine().trim();
 
         switch (sandoChoice) {
             case "1":
@@ -37,7 +38,6 @@ public class Display {
                 //double sum = 0 then
                 // for(Orderable order : totalOrder){
                 // sum += order.getprice;
-                //}
                 break;
             case"0":
                 order.cancelOrder();

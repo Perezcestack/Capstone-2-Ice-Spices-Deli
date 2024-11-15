@@ -1,0 +1,2 @@
+Sandwich{Your size sandwich is 4 inches with a bread type Wrap your toppings are [onions, onions], [bacon, swiss, bacon, american][steak] toasted? = false 9.5
+Sandwich{Your size sandwich is 12 inches with a bread type wheat your toppings are [onions, onions], [bacon, swiss, bacon, american][steak] toasted? = true 20.5

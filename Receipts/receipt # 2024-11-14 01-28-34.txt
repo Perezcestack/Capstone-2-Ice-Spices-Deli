@@ -1,0 +1,2 @@
+Sandwich{Your size sandwich is 8 inches with a bread type rye your toppings are [lettuce, peppers, lettuce], [ham, bacon, swiss][Steak] toasted? = true 12.5
+Sandwich{Your size sandwich is 12 inches with a bread type Rye your toppings are [lettuce, peppers, lettuce], [ham, bacon, swiss][Steak] toasted? = false 16.75
